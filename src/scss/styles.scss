@@ -1,0 +1,56 @@
+/*
+   Import partials below
+*/
+@import 'normalize';
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid gold;
+  border-radius: 15px;
+  padding: 2%;
+  width: 960px;
+  background: #bbecec;
+  margin: 0 auto;
+}
+
+.url-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.url-item {
+  display: flex;
+  width: 100%;
+  margin: 20px 10px;
+  padding: 8px;
+  border: 2px solid #1e1e44;
+  border-radius: 12px;
+  box-shadow: 0px 0px 22px 3px rgba(0, 0, 0, 0.75);
+}
+
+.url-imgDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  width: 38%;
+}
+
+.url-img {
+  width: 100%;
+}
+
+.url-descr {
+  margin: 2%;
+  width: 58%;
+  text-align: start;
+}

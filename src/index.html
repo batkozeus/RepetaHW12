@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="theme-color" content="#000000">
+  <meta name="copyright" content="Author">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="apple-mobile-web-app-title" content="Application Name">
+  <meta name="msapplication-TileImage" content="images/favicons/144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="format-detection" content="telephone=no">
+
+  <title>Placeholder title</title>
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+<!-- 
+  Напишите приложение для хранения url веб-страниц в виде карточек-закладок.
+  
+  Реализуйте следующие задачи:
+  * Используйте Gulp для сборки проекта, JS обработан транспайлером Babel, ресурсы оптимизированы
+
+  * Для добавления новой закладки, в приложении есть форма с элементом input и кнопкой "Добавить"
+  
+  * В приложении есть список всех добавленных карточек-закладок, располагающийся под формой
+  
+  * Все элементы интерфейса создаются динамически. 
+  Использовать шаблонизатор Handlebars для создания формы и списка карточек.
+  
+  * При добавлении ссылки в поле формы и нажатии на кнопку "Добавить", происходят проверки:
+    - на существование закладки с такой ссылкой в текущей коллекции закладок, 
+    если такая закладка есть, всплывает диалоговое окно оповещающее пользователя
+    о том, что такая закладка уже есть
+    - при условии валидной, еще не существующей в коллекции ссылки, карточка с такой ссылкой
+добавляется в коллекцию
+
+  * В интерфейсе, новые карточки добавляются наверх списка, а не вниз
+
+  * Каждая карточка-закладка содержит кнопку для удаления карточки из коллекции, при клике на кнопку происходит удаление
+  
+  * При повторном посещении страницы с одного и того же устройства и браузера, 
+  пользователь видит все карточки-закладки которые были во время последнего его посещения.
+  Используйте localStorage
+
+  * Оформление интерфейса произвольное
+  
+  ***ЗАДАЧА ПОВЫШЕНОЙ СЛОЖНОСТИ - выполнять по желанию***
+  * При добавлении ссылки в поле формы и нажатии на кнопку "Добавить", происходят проверки: - на валидность введенной ссылки: если
+был введен невалидный url то должно всплывать диалоговое окно, оповещающее пользователя о том, что это невалидный url
+
+  * Каждая карточка содержит превью изображение и базовую информацию о странице по адресу закладки,
+   для получения этой информации воспользуйтесь этим Rest сервисом - https://www.linkpreview.net/
+
+  -->
+
+  <div class="wrapper">
+
+    <h2>Задание</h2>
+    <form class="form js-form">
+      <input class="add-url-input" type="text">
+      <button class="add-url-btn">Add url</button>
+    </form>
+    <div class="url-container"></div>
+    <hr>
+  </div>
+
+  <!-- Шаблон одной строки для tbody -->
+  <script type="text/template" id="url-list">
+    <div class="url-item">
+      <div class="url-imgDiv">
+        <img class="url-img" src="{{image}}" alt="{{title}}">
+      </div>
+      <div class="url-descr">
+        <h2><a class="url-link" href={{url}}>{{title}}</a></h2>
+        <p class="url-text">{{description}}</p>
+        <button class="delete-url-btn" name={{url}}>Delete url</button>
+      </div>
+    </div>
+  </script>
+
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js'></script>
+  <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
